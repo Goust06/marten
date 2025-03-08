@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<body>
+    {% include "include/header.html" %}
+        <div class="breadcrumb-area pt-95 pb-95 bg-img" style="background-image:url({%  %});">
+            <div class="container">
+                <div class="breadcrumb-content text-center">
+                    <h2>Blog</h2>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li class="active">Blog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="blog-area pt-100 pb-100 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="blog-wrapper mb-30 gray-bg">
+                            <div class="blog-img hover-effect">
+                                <a href="blog-details.html"><img alt="" src="{% static 'img/blog/blog-4.png' %}"></a>
+
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <ul>
+                                        <li>By:<span>Admin</span></li>
+                                        <li>Sep 14, 2018</li>
+                                    </ul>
+                                </div>
+                                <h4><a href="blog-details.html">Lorem ipsum dolor amet cons adipisicing elit</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination-style text-center mt-20">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="icon-arrow-left"></i></a>
+                        </li>
+                        <li>
+                            <a href="page=1">1</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'blog_page' page=2 %}">2</a>
+                        </li>
+                        <li>
+                            <a class="active" href="#"><i class="icon-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% include 'include/footer.html' %}
+       {% endblock %}
